@@ -1,0 +1,6 @@
+canvas:not(#ribbon-canvas), #web_bg {
+    margin-bottom: -0.4rem;
+    display: block;
+    /* width: 100%;
+    height: 200px; */
+}

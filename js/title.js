@@ -1,5 +1,5 @@
-// 可爱的Title
-var OriginTitle = document.title;
+function myFn () {
+OriginTitle = document.title;
 var titleTime;
 document.addEventListener('visibilitychange', function() {
     if (document.hidden) {
@@ -14,3 +14,5 @@ document.addEventListener('visibilitychange', function() {
         }, 2000);
     }
 });
+}
+btf.isJqueryLoad(myFn)
