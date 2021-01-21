@@ -7,9 +7,9 @@
      pointer-events: none;
   }
   /* top-img隐藏 */
-  #page-header {
+  /* #page-header {
     background: transparent !important;
-  }
+  } */
   /* 宽度小于530px隐藏信封 */
   @media screen and (max-width: 530px) {
     #computer {

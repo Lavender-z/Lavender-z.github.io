@@ -1,22 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>利用Hexo和Github搭建一个属于自己的个人博客(基础)</title>
-    <url>/2020/12/20/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2>
-<h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server"></a> Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files"></a> Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites"></a> Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <title>利用 Hexo 和 Github 搭建一个属于自己的个人博客(基础)</title>
+    <url>/2020/12/20/BlogBuild/</url>
+    <content><![CDATA[<h2 id="写在最前面"><a class="markdownIt-Anchor" href="#写在最前面"></a> 写在最前面</h2>
+<P style="text-indent:2em;">
+博客的搭建有很多种，可以利用第三方平台，也可以自建。比较早的有博客园、CSDN，近几年新兴的也比较多诸如：WordPress、SegmentFault、简书、掘金、知乎专栏、Github Page 等等。
+</p>
+<P style="text-indent:2em;">
+这次我要介绍的就是利用 Github Page 和 Hexo 搭建个人博客的方式。Github Page 是 Github 提供的一种免费的静态网页托管服务（所以想想免费的空间不用也挺浪费的哈哈哈），可以用来托管博客、项目官网等静态网页。支持 Jekyll、Hugo、Hexo 编译静态资源，这次我们的主角就是 Hexo 了，具体的内容下面在文章内介绍。下面就开始吧~
+</p>
+<h2 id="准备工作"><a class="markdownIt-Anchor" href="#准备工作"></a> 准备工作</h2>
+<P style="text-indent:2em;">
+Node.js 和 Git 的安装是搭建个人博客的第一步。下面我会详细的介绍如何安装 Node.js 和 Git。
+</p>
+<details>
+<summary>点击查看</summary>
+<div class="tabs" id="prepare"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#prepare-1">Node.js安装与配置</button></li><li class="tab"><button type="button" data-href="#prepare-2">Git安装与配置</button></li><li class="tab"><button type="button" data-href="#prepare-3">Github注册以及Github Pages创建</button></li><li class="tab"><button type="button" data-href="#prepare-4">配置Git用户名和邮箱</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="prepare-1"><p>首先去<a href="https://nodejs.org/en/download/">Node.js</a>官网，下载 node.js 的安装程序，根据你电脑系统的配置信息，下载对应的安装程序，然后开始进行下面的步骤。<br />
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Nodejs/1.jpg" class="[Node.js]" title="Node.js 的官网 " alt="Node.js 的官网"></p>
+<p>下载好与电脑系统对应的安装程序后，开始安装流程：<br />
+1.点击 Next<br />
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Nodejs/2.jpg" class="[Node.js]" title="安装步骤1 " alt="安装步骤1"></p>
+<p>2.将&quot;I accept the terms in the License Agreement&quot;前面的复选框勾选，同意安装协议，再点 Next，进行下一步操作<br />
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Nodejs/3.jpg" class="[Node.js]" title="安装步骤2 " alt="安装步骤2"></p>
+<p>3.选择 Node.js 安装程序的安装位置，在这里我以&quot;C:\Program Files\nodejs&quot;为例，点击 Next，进入下一步操作<br />
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Nodejs/4.jpg" class="[Node.js]" title="安装步骤3 " alt="安装步骤3"></p>
+<p>4.选择安装的模块和功能，这里全部安装，并添加到系统环境变量 ，继续点击 Next，进入下一步操作<br />
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Nodejs/5.jpg" class="[Node.js]" title="安装步骤4 " alt="安装步骤4"></p>
+<p>5.这一步可以跳过，这个选项的意思是安装一些编译本地模块的工具，比如 python，C/C++ 等，点击 Next，进入下一步<br />
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Nodejs/6.jpg" class="[Node.js]" title="安装步骤5 " alt="安装步骤5"></p>
+<p>6.点击&quot;Install&quot;，等待 Node.js 安装完成<br />
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Nodejs/7.jpg" class="[Node.js]" title="安装步骤6 " alt="安装步骤6"></p>
+<p>7.当看到下图所显示的情况，Node.js 就成功安装完毕<br />
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Nodejs/8.jpg" class="[Node.js]" title="安装步骤7 " alt="安装步骤7"></p>
+<p>8.验证安装，并测试 Node.js 是否加入环境变量，当出现如下图的情况，Node.js 安装大功告成<br />
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Nodejs/9.jpg" class="[Node.js]" title="验证安装 " alt="验证安装是否成功"></p>
+<p>如果执行<code>node -v</code>报错的话，那么手动将 Node.js 的安装路径添加到环境变量中，右击点击我的电脑 ——&gt; 属性 ——&gt; 高级系统设置 ——&gt; 环境变量，在系统变量下找到名为 path 的变量名，如下图：<br />
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Nodejs/10.jpg" class="[Node.js]" title="添加系统环境变量 " alt="添加系统环境变量"></p>
+<p>选中 path，或者双击，然后将你 node.js 的安装路径放在 path 变量值的最后面，如果添加之前 path 值最后有英文的分号，则直接将路径添加进去即可，如果没有，先添加分号，然后点击保存，回到桌面，打开cmd（Win+R），执行<code>node -v</code>，看是否成功。</p>
+<p>9.设置 npm 的镜像源</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"># 查看npm的配置</span><br><span class="line">npm config list</span><br><span class="line"># 默认源</span><br><span class="line">npm config <span class="built_in">set</span> registry https://registry.npmjs.org</span><br><span class="line"># 临时改变镜像源</span><br><span class="line">npm --registry=https://registry.npm.taobao.org</span><br><span class="line"># 永久设置为淘宝镜像源</span><br><span class="line">npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span><br><span class="line"># 另一种方式，编辑 ~/.npmrc 加入下面内容</span><br><span class="line">registry = https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<p>10.设置 npm 的内置路径 ——&gt; 全局模块路径和缓存路径<i><font color=LightCoral>（可选）</font></i><br />
+如果不改变内置路径也可，除非你的 C 盘空间足够 bigger，这一步可以略过，不改变的话，它的路径在：</p>
+<div class="note info flat"><p>此处参考：<a href="https://blog.csdn.net/jianleking/article/details/79130667">node 环境变量配置，npm 环境变量配置</a></p>
+</div>
+<p>● npm 包全局目录：<code>C:/Users/[username]/AppData/Roaming/npm/node_modules</code><br />
+● npm 包全局命令目录：<code>C:/Users/[username]/AppData/Roaming/npm</code><br />
+● npm 实际去找全局命令的目录：<code>C:/Users/[username]/.npmrc</code>文件内容的<code>prefix</code>值<br />
+● npm 包全局cache目录：<code>C:/Users/[username]/.npmrc</code>文件内容的<code>cache</code>值<br />
+首先在你 Node.js 的安装位置，新建两个文件夹，<code>node_global</code>和<code>node_cache</code>，我的路径是：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">D:\Learning\nodejs\node_global</span><br><span class="line">D:\Learning\nodejs\node_cache</span><br></pre></td></tr></table></figure>
+<p>然后分别执行的命令就是：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> prefix&quot;D:\Learning\nodejs\node_global&quot;</span><br><span class="line">npm config <span class="built_in">set</span> cache &quot;D:\Learning\nodejs\node_cache&quot;</span><br></pre></td></tr></table></figure>
+<p>然后在配置环境变量，右击我的电脑 ——&gt; 属性 ——&gt; 高级系统设置 ——&gt; 环境变量同样的位置，在用户变量的地方，找到 path 变量进行修改，修改值如下图。然后就大功告成了，Node.js 就安装完毕了。<br />
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Nodejs/11.jpg" class="[Node.js]" title="添加用户环境变量 " alt="添加用户环境变量"></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="prepare-2"><p>首先就是去<a href="https://git-scm.com/">Git官网</a>下载 Git，根据你电脑系统的配置信息，下载对应的安装程序，然后开始进行下面的步骤。<br />
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Git/1.jpg" class="[Git]" title="Git官网 " alt="Git官网"></p>
+<p>1.下载好 Git 的安装包，开始安装，打开安装包，出现如图的界面，点击 Next<br />
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Git/2.jpg" class="[Git]" title="安装步骤1 " alt="安装步骤1"></p>
+<p>2.选择你要安装的位置，我以 C 盘为例，路径为图中所示，安装到其他位置的话，点击 Browse，选择你要安装的位置，然后点击 Next，进入下一步<br />
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Git/3.jpg" class="[Git]" title="安装步骤2 " alt="安装步骤2"></p>
+<p>3.选择你是否创建桌面快捷放方式，其他默认即可，点击 Next，进入下一步<br />
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Git/4.jpg" class="[Git]" title="安装步骤3 " alt="安装步骤3"></p>
+<p>4.是否将 Git 快捷方式的目录加入开是菜单栏<br />
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Git/5.jpg" class="[Git]" title="安装步骤4 " alt="安装步骤4"></p>
+<p>5.这个是选择文本编辑器的方式，默认是 Vim，也可以选择其他的方式，自主选择，在这里我选择的 Vim 默认方式。选择好文本编辑器的方式后，点击 Next，进入下一个流程<br />
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Git/6.jpg" class="[Git]" title="安装步骤5 " alt="安装步骤5"></p>
+<p>6.选择安装 Git 时对环境变量 PATH 的影响，第一种影响较小，第三种会影响到 Windows 的自带工具，默认勾选中间项，建议不要修改，直接点击 Next 继续安装<br />
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Git/7.jpg" class="[Git]" title="安装步骤6 " alt="安装步骤6"></p>
+<p>7.选择 Git 在使用 HTTPS 时使用的库，若无特殊需求，可保持默认选项，点击 Next 继续安装<br />
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Git/8.jpg" class="[Git]" title="安装步骤7 " alt="安装步骤7"></p>
+<p>8.选择提交与拉取记录时，对换行符的处理方式，若无特殊需要，默认选择即可，点击 Next 继续安装<br />
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Git/9.jpg" class="[Git]" title="安装步骤8 " alt="安装步骤8"></p>
+<p>9.选择模拟终端软件（即命令行窗口软件），若无特殊需要，可默认选择，点击 Next 继续安装<br />
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Git/10.jpg" class="[Git]" title="安装步骤9 " alt="安装步骤9"></p>
+<p>10.最新功能的询问，若不想尝试尚未保证稳定性的新功能，默认不勾选，点击 Install 即可完成安装<br />
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Git/11.jpg" class="[Git]" title="安装步骤10 " alt="安装步骤10"></p>
+<p>11.安装完成<br />
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Git/12.jpg" class="[Git]" title="安装步骤11 " alt="安装步骤11"></p>
+<p>12.回到桌面，点击鼠标右键，会出现两个选项<code>Git GUI Here</code>和<code>Git Bash Here</code>，在打开 Cmd(Win+R)，分别输入<code>git</code>和<code>git --version</code>，如果出现如下图的情况，即安装成功<br />
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Git/13.jpg" class="[Git]" title="Git " alt="Git 1-1"><br />
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Git/14.jpg" class="[Git]" title="Git " alt="Git 1-2"></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="prepare-3"><p>1.打开<a href="https://github.com/">Github官网</a>首页，点击右上角的<strong>Sign Up</strong>，然后在出现的页面上填写你的相关信息，进行注册<br />
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Github/1.jpg" class="[Github]" title="Github 的官网 " alt="Github 的官网"><br />
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Github/2.jpg" class="[Github]" title="进行注册 " alt="进行注册"><br />
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Github/3.jpg" class="[Github]" title="进行验证 " alt="进行验证"></p>
+<p>2.验证完成后，点击 Next：Select a plan，会出现如上图的验证界面，同理，只需要将其中的动物调整为正向显示即可。接着会出现下图的界面，选择 Free，下方的两个选项可选可不选，点击 Continue 继续：<br />
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Github/4.jpg" class="[Github]" title="选择 Free " alt="进行 Free"></p>
+<p>3.这时 Github 会给你发一封邮件，验证一下即可，验证过后才可以创建库。</p>
+<p>4.验证完成后，开始创建库，如下图所示，仓库名创建格式必须为：<code>&lt;用户名&gt;.github.io</code>，<code>Description</code>为描述仓库，自定义写，填写必要的描述，也可不填。勾选<code>Initialize this repository with a README</code>点击<code>Creat repository</code>进行创建。<br />
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Github/5.jpg" class="[Github]" title="建立仓库 " alt="建立仓库"></p>
+<p>然后就会出现如图所示的界面，即仓库创建成功！<br />
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Github/6.jpg" class="[Github]" title="建立成功 " alt="建立成功"></p>
+<p>5.我们来测试一下，点击<code>Create new file</code>，出现如下界面，然后命名文件名为<code>index.html</code>，在填写如图的内容，再点击<code>Commit new file</code>，即创建成功，然后打开一个新的网页，输入网址<code>https://&lt;你的用户名&gt;.github.io</code>，即可以看见一个新的网页，其中的内容就是你写的内容。至此，Github 的注册以及 Github Pages 已经创建完成了。</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="prepare-4"><p>1.在桌面点击鼠标右键，点击<code>Git Bash Here</code>，会出现一个界面如下图所示<br />
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Github/7.jpg" class="[Github]" title="Git界面 " alt="Git界面"></p>
+<p>2.然后分别输入下面的两个命令，并回车</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">&quot;此处填写你注册时的用户名&quot;</span></span><br><span class="line">$ git config --global user.email <span class="string">&quot;此处填写你注册时的邮箱&quot;</span></span><br><span class="line"><span class="comment"># 一般只要不报错，可以跳过下面寻找.gitconfig文件</span></span><br></pre></td></tr></table></figure>
+<p>3.然后找到<code>.gitconfig</code>文件，文件存放位置在<code>C:/Users/[username]/.gitconfig</code>（未找到的话，请开启显示隐藏文件的功能），用编辑器打开，看到如下图所示的内容，即配置成功<br />
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Github/8.jpg" class="[Github]" title="配置信息 " alt="配置信息"></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+</details>
+<h2 id="本地安装-hexo-静态博客框架以及发布到-github-pages"><a class="markdownIt-Anchor" href="#本地安装-hexo-静态博客框架以及发布到-github-pages"></a> 本地安装 hexo 静态博客框架以及发布到 Github Pages</h2>
+<p>1.首先选择一个磁盘作为你博客文件的存放位置，然后新建一个文件夹，比如名为 MyBlog 的文件夹，创建完后，先不要点进去，在此处点击鼠标右键，选择<code>Git Bash Here</code>，然后依次输入如下命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># hexo框架的安装</span></span><br><span class="line">$ npm install -g hexo-cli</span><br><span class="line"><span class="comment"># 等上一个命令完成后，在输入下面的命令</span></span><br><span class="line">$ hexo init &lt;新建文件夹的名称&gt;  <span class="comment">#初始化文件夹</span></span><br><span class="line">$ <span class="built_in">cd</span> &lt;新建文件夹的名称&gt;</span><br><span class="line">$ npm install  <span class="comment"># 安装博客所需要的依赖文件</span></span><br></pre></td></tr></table></figure>
+<p>2.等待运行完成，此时文件夹中多了许多文件</p>
+<div class="note warning flat"><p>注意：后续的命令均需要在站点目录下（即文件夹内）使用 Git Bash 运行</p>
+</div>
+<p>此时 Hexo 框架的本地搭建已经完成了。我们来运行一下看看，命令行依次输入以下命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+<p>3.浏览器中打开<code>http://locakhost:4000</code>或者<code>127.0.0.1:4000</code>，可以看到一个网页，说明 Hexo 博客已经成功在本地运行</p>
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Hexo/1.jpg" class="[Hexo]" title="配置信息 " alt="配置信息">
+<h2 id="本地博客发布到-github-pages"><a class="markdownIt-Anchor" href="#本地博客发布到-github-pages"></a> 本地博客发布到 Github Pages</h2>
+<P style="text-indent:2em;">
+之前的步骤中，我们已经完成了对 Github 账户的注册以及 Github Pages 的创建，接下来是将本地博客发布至 Github Pages。
+</P>
+1.首先需要安装发布的插件，在站点目录下执行下面的命令，也就是创建的博客目录下
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>2.紧接着，将本地目录与 GitHub 关联起来，输入下面的命令行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">&quot;你的邮箱地址&quot;</span></span><br></pre></td></tr></table></figure>
+<p>输入后一直回车，然后在<code>C:/Users/[username]</code>目录下找到名为<code>.ssh</code>的文件夹， 文件夹内会有两个文件，一个<code>id_rsa.pub</code>一个<code>id_rsa</code>，用文本编辑器打开<code>id_rsa.pub</code>，复制里面的的内容。 然后打开 Github，点击右上角的头像<strong>Settings</strong>选择<strong>SSH and GPG keys</strong></p>
+<p>点击<strong>New SSH key</strong>将之前复制的内容粘帖到<strong>Key</strong>的框中。 上面的<strong>Title</strong>可以随意，点击<strong>Add SSH key</strong>完成添加。</p>
+<p>然后回到 Git 的命令行界面，测试一下是否与 GitHub 连接成功。输入下面的命令行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>点击回车，然后会出现一个询问内容，输入<code>yes</code>，回车，会出现一段内容<code>Hi &lt;account name&gt;! You've successfully authenticated, but GitHub doesnot provide shell access.</code>。 说明连接成功。此处这个<code>&lt;account name&gt;</code>应该是你 Github 的用户名。</p>
+<p>3.进入博客站点目录，用文本编辑器打开<code>_config.yml</code>，这个<code>_config.yml</code>是博客的配置文件，在以后的博客修改，如个性化修改，博客SEO优化等都会使用到，修改如下几个地方</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">title: 你的博客名</span><br><span class="line">subtitle: 博客的副标题，有些主题支持</span><br><span class="line">description: 博客描述</span><br><span class="line">keywords: 博客关键词</span><br><span class="line">author: 作者，在文章中显示</span><br><span class="line">language: 博客语言语种   </span><br><span class="line">timezone: 时区</span><br></pre></td></tr></table></figure>
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/1/Hexo/2.jpg" class="[Hexo]" title="修改配置 " alt="修改配置">
+<p>4.在该文件最底部，有一个 deploy，在 deploy 下面添加一个 repo 项 ，一个 branch 项，填入如下代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:Github用户名&#x2F;github用户名.github.io.git  </span><br><span class="line">  &#x2F;&#x2F;也可使用https地址，如：https:&#x2F;&#x2F;github.com&#x2F;Github用户名&#x2F;Github用户名.github.io.git			</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
+<p>5.最后就是生成页面，并发布至 Github Pages，执行如下命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Hexo会根据配置文件渲染出一套静态页面</span></span><br><span class="line">$ hexo g</span><br><span class="line"><span class="comment"># 将上一步渲染出的一系列文件上传至至Github Pages</span></span><br><span class="line">$ hexo d</span><br><span class="line"><span class="comment"># 也可以直接输入此命令，直接完成渲染和上传</span></span><br><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure>
+<p>上传完成后，在浏览器中打开<strong>https://&lt;用户名&gt;.github.io</strong>，查看上传的网页。如果页面变成了之前本地调试时的样子，说明上传以及完成了。没变的话查看一下上传时命令行窗口的信息有没有错误信息，没有的话清除一下浏览器缓存试试。</p>
+<details>
+<summary>网页部署阶段可能会出现的 bug</summary>
+<p>报错<code>ERROR Deployer not found: git</code></p>
+<p>1.git 用户名和邮箱配置错误</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name%<span class="string">&quot;username&quot;</span></span><br><span class="line">$ git config --global user.email%<span class="string">&quot;username@example.com&quot;</span></span><br></pre></td></tr></table></figure>
+<p>这里的<code>%</code>，在正确的格式中是一个<code>空格</code>，如果你之前没有打空格，那么邮箱和用户名根本就没有记录进去。回退到这一步重新进行。</p>
+<p>2.<code>hexo-deployer-git</code>插件没有安装正确，重新在<code>[Blogroot]</code>路径下<code>右键 ——&gt; Git Bash Here</code>，执行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-deployer-git –save</span><br><span class="line"><span class="comment"># 重新安装之后，再尝试提交</span></span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+</details>
 ]]></content>
       <categories>
         <category>博客搭建</category>
