@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title></title>
+    <url>/2021/01/22/Blog/BlogBeauty/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>利用 Hexo 和 Github 搭建一个属于自己的个人博客(基础)</title>
-    <url>/2020/12/20/BlogBuild/</url>
+    <url>/2020/12/20/Blog/BlogBuild/</url>
     <content><![CDATA[<h2 id="写在最前面"><a class="markdownIt-Anchor" href="#写在最前面"></a> 写在最前面</h2>
 <P style="text-indent:2em;">
 博客的搭建有很多种，可以利用第三方平台，也可以自建。比较早的有博客园、CSDN，近几年新兴的也比较多诸如：WordPress、SegmentFault、简书、掘金、知乎专栏、Github Page 等等。
