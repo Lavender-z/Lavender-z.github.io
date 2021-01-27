@@ -163,7 +163,8 @@ Node.js 和 Git 的安装是搭建个人博客的第一步。下面我会详细�
   <entry>
     <title>使用 Matery 主题继续完成博客的搭建</title>
     <url>/2020/12/24/Blog/BlogTheme_matery/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h2 id="写在最前面"><a class="markdownIt-Anchor" href="#写在最前面"></a> 写在最前面</h2>
+]]></content>
       <categories>
         <category>博客搭建</category>
       </categories>
