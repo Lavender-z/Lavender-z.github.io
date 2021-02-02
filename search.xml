@@ -3,7 +3,17 @@
   <entry>
     <title>关于博客主题的一些美化与魔改</title>
     <url>/2020/12/26/Blog/BlogBeauty/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h2 id="写在最前面"><a class="markdownIt-Anchor" href="#写在最前面"></a> 写在最前面</h2>
+<p style="text-indent:2em;">
+本帖的主要目的是用最简单的语言描述博客美化的进程，同时在每个章节为可能涉及的知识点提供相应的工具网站以供读者学习。当然，最重要的是给我自己留个魔改的日记。这样升级主题玩崩了也能找到回家的路。
+</p>
+<h2 id="matery-主题美化"><a class="markdownIt-Anchor" href="#matery-主题美化"></a> Matery 主题美化</h2>
+<blockquote>
+<p>主题美化会涉及到 js 文件和 css 文件等的修改，个人建议新增的 js 文件放在<code>themes/matery/layout/layout.ejs</code>这个文件下，这样会稍微加快博客访问的速度。不想花钱最好的方式是使用 cdn.jsdeliver。</p>
+</blockquote>
+<h3 id="动态标题"><a class="markdownIt-Anchor" href="#动态标题"></a> 动态标题</h3>
+<a href="#">Post not found: MateryBeauty 跳转到–Markdown写作模板–文章 true</a>
+]]></content>
       <categories>
         <category>博客搭建</category>
       </categories>
@@ -150,6 +160,26 @@ Node.js 和 Git 的安装是搭建个人博客的第一步。下面我会详细�
 <p>2.<code>hexo-deployer-git</code>插件没有安装正确，重新在<code>[Blogroot]</code>路径下<code>右键 ——&gt; Git Bash Here</code>，执行：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-deployer-git –save</span><br><span class="line"><span class="comment"># 重新安装之后，再尝试提交</span></span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
 </details>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>Github</tag>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>对于 Matery 主题的美化</title>
+    <url>/2020/12/28/Blog/MateryBeauty/</url>
+    <content><![CDATA[<h3 id="动态标题"><a class="markdownIt-Anchor" href="#动态标题"></a> 动态标题</h3>
+<p style="text-indent:2em;">
+效果图如下：
+</p>
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/4/1.jpg" class="[motion]" title="离开当前页面时 " alt="离开当前页面时">
+<img src= "/img/loading.gif" data-lazy-src="/img/blog/4/2.jpg" class="[motion]" title="返回当前页面时 " alt="返回当前页面时">
+<p>实现方法，引入 js 文件，在主题文件下的<code>/source/js/</code>下新建<code>FunnyTitle.js</code>，然后在添加到<code>themes/matery/layout/layout.ejs</code>或者添加到<code>themes/matery/layout/_partial/head.ejs</code>，其代码如下：</p>
 ]]></content>
       <categories>
         <category>博客搭建</category>
