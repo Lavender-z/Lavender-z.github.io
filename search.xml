@@ -214,9 +214,27 @@ Node.js 和 Git 的安装是搭建个人博客的第一步。下面我会详细�
       </tags>
   </entry>
   <entry>
-    <title>动态标题的设置</title>
+    <title>修改导航栏颜色以及透明效果</title>
     <url>/2020/12/28/Blog/56936/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h2 id="修改导航栏颜色以及透明效果"><a class="markdownIt-Anchor" href="#修改导航栏颜色以及透明效果"></a> 修改导航栏颜色以及透明效果</h2>
+<p>    打开<code>themes/matery/source/css/matery.css</code>文件，大约在 250 行，有一个<code>.bg-color</code>属性，修改其属性值即可，代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.bg-color &#123;</span><br><span class="line">    background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%); &#x2F;&#x2F;修改成自己喜欢的颜色值</span><br><span class="line">    opacity: 0.8;  &#x2F;&#x2F;透明效果 值范围 0~1，看情况自己修改</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>博客</tag>
+        <tag>Matery</tag>
+        <tag>美化与魔改</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>鼠标点击文字特效</title>
+    <url>/2020/12/28/Blog/58148/</url>
+    <content><![CDATA[<h2 id="鼠标点击文字特效"><a class="markdownIt-Anchor" href="#鼠标点击文字特效"></a> 鼠标点击文字特效</h2>
+<p>    实现方法，引入 js 文件，在主题文件下的<code>/source/js/</code>下新建<code>click_show_text.js</code>，其代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var a_idx &#x3D; 0;</span><br><span class="line">jQuery(document).ready(function ($) &#123;</span><br><span class="line">    $(&quot;body&quot;).click(function (e) &#123;</span><br><span class="line">        var a &#x3D; new Array(&quot;富强&quot;, &quot;民主&quot;, &quot;文明&quot;, &quot;和谐&quot;, &quot;自由&quot;, &quot;平等&quot;, &quot;公正&quot;, &quot;法治&quot;, &quot;爱国&quot;, &quot;敬业&quot;, &quot;诚信&quot;, &quot;友善&quot;);</span><br><span class="line">        var $i &#x3D; $(&quot;&lt;span&#x2F;&gt;&quot;).text(a[a_idx]);</span><br><span class="line">        a_idx &#x3D; (a_idx + 1) % a.length;</span><br><span class="line">        var x &#x3D; e.pageX,</span><br><span class="line">            y &#x3D; e.pageY;</span><br><span class="line">        $i.css(&#123;</span><br><span class="line">            &quot;z-index&quot;: 5,</span><br><span class="line">            &quot;top&quot;: y - 20,</span><br><span class="line">            &quot;left&quot;: x,</span><br><span class="line">            &quot;position&quot;: &quot;absolute&quot;,</span><br><span class="line">            &quot;font-weight&quot;: &quot;bold&quot;,</span><br><span class="line">            &quot;color&quot;: &quot;#FF0000&quot;</span><br><span class="line">        &#125;);</span><br><span class="line">        $(&quot;body&quot;).append($i);</span><br><span class="line">        $i.animate(&#123;</span><br><span class="line">                &quot;top&quot;: y - 180,</span><br><span class="line">                &quot;opacity&quot;: 0</span><br><span class="line">            &#125;,</span><br><span class="line">            3000,</span><br><span class="line">            function () &#123;</span><br><span class="line">                $i.remove();</span><br><span class="line">            &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">    setTimeout(&#39;delay()&#39;, 2000);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">function delay() &#123;</span><br><span class="line">    $(&quot;.buryit&quot;).removeAttr(&quot;onclick&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>博客搭建</category>
       </categories>
@@ -242,6 +260,10 @@ Node.js 和 Git 的安装是搭建个人博客的第一步。下面我会详细�
 <div class="tag link"><a class="link-card" title="动态标题" href="https://lavender-z.github.io/2020/12/28/Blog/32645/"><div class="left"><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/Lavender-z/Lavender-z.github.io/img/beiyong/4.jpeg"/></div><div class="right"><p class="text">动态标题</p><p class="url">https://lavender-z.github.io/2020/12/28/Blog/32645/</p></div></a></div>
 <h3 id="修改导航栏颜色以及透明效果"><a class="markdownIt-Anchor" href="#修改导航栏颜色以及透明效果"></a> 修改导航栏颜色以及透明效果</h3>
 <div class="tag link"><a class="link-card" title="修改导航栏颜色以及透明效果" href="https://lavender-z.github.io/2020/12/28/Blog/56936/"><div class="left"><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/Lavender-z/Lavender-z.github.io/img/beiyong/4.jpeg"/></div><div class="right"><p class="text">修改导航栏颜色以及透明效果</p><p class="url">https://lavender-z.github.io/2020/12/28/Blog/56936/</p></div></a></div>
+<h3 id="添加动态诗词"><a class="markdownIt-Anchor" href="#添加动态诗词"></a> 添加动态诗词</h3>
+<div class="tag link"><a class="link-card" title="添加动态诗词" href="https://lavender-z.github.io/2020/12/28/Blog/7087/"><div class="left"><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/Lavender-z/Lavender-z.github.io/img/beiyong/4.jpeg"/></div><div class="right"><p class="text">添加动态诗词</p><p class="url">https://lavender-z.github.io/2020/12/28/Blog/7087/</p></div></a></div>
+<h3 id="鼠标点击文字特效"><a class="markdownIt-Anchor" href="#鼠标点击文字特效"></a> 鼠标点击文字特效</h3>
+<div class="tag link"><a class="link-card" title="添加动态诗词" href="https://lavender-z.github.io/2020/12/28/Blog/58148/"><div class="left"><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/Lavender-z/Lavender-z.github.io/img/beiyong/4.jpeg"/></div><div class="right"><p class="text">添加动态诗词</p><p class="url">https://lavender-z.github.io/2020/12/28/Blog/58148/</p></div></a></div>
 ]]></content>
       <categories>
         <category>博客搭建</category>
@@ -249,6 +271,24 @@ Node.js 和 Git 的安装是搭建个人博客的第一步。下面我会详细�
       <tags>
         <tag>hexo</tag>
         <tag>博客</tag>
+        <tag>美化与魔改</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>添加动态诗词</title>
+    <url>/2020/12/28/Blog/7087/</url>
+    <content><![CDATA[<h2 id="添加动态诗词"><a class="markdownIt-Anchor" href="#添加动态诗词"></a> 添加动态诗词</h2>
+<p>    采用的是<a href="https://www.jinrishici.com/">今日诗词</a>，每次返回一句诗词，根据时间、地点、天气、事件智能推荐。官网有<a href="https://www.jinrishici.com/doc/">API 文档</a>，可以去看一下，有多种安装方式，最简单的方式就是从官网获取代码，在<code>/themes/matery/layout/_partial/head.ejs</code>添加下面的一行代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;sdk.jinrishici.com&#x2F;v2&#x2F;browser&#x2F;jinrishici.js&quot; charset&#x3D;&quot;utf-8&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<p>    然后再将<code>/themes/matery/layout/_partial/bg-cover-content.ejs</code>中的<code>&lt;%= config.description %&gt;</code>修改为<code>&lt;span id=&quot;jinrishici-sentence&quot;&gt;正在加载今日诗词....&lt;/span&gt;' %&gt;</code>，这个使用前提是将主题配置文件的<code>subtitle</code>的值改为<code>false</code>。</p>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>博客</tag>
+        <tag>Matery</tag>
         <tag>美化与魔改</tag>
       </tags>
   </entry>
