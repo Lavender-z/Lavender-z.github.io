@@ -163,7 +163,35 @@ Node.js 和 Git 的安装是搭建个人博客的第一步。下面我会详细�
   <entry>
     <title>使用 Matery 主题继续完成博客的搭建</title>
     <url>/2020/12/24/Blog/BlogTheme_matery/</url>
-    <content><![CDATA[<h2 id="写在最前面"><a class="markdownIt-Anchor" href="#写在最前面"></a> 写在最前面</h2>
+    <content><![CDATA[<div class="note blue icon flat"><i class="note-icon fas fa-bullhorn"></i><p>本篇文章仅介绍简单的使用，详情请参照<a href="https://butterfly.js.org/">官方文档</a></p>
+</div>
+<h2 id="写在最前面"><a class="markdownIt-Anchor" href="#写在最前面"></a> 写在最前面</h2>
+<p style="text-indent:2em;">
+在利用 hexo 和 Github Page 搭建好博客后，会发现系统提供的主题都是一样的，看着感觉不太舒服，这时候我们可以选择自己利用 JavaScript、css 等对博客的板块进行设计（自己做别人眼中的大佬~），也可以在 Github上搜索一些大佬们设计的主题，然后 clone 下来进行使用。
+</p>
+<p style="text-indent:2em;">下面就来介绍一下利用 Matery 主题来继续完成博客的搭建。
+</p>
+<h2 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h2>
+<p>点击<a href="https://github.com/blinkfox/hexo-theme-matery"> 传送门 </a>下载 master 分支的最新稳定版的代码，解压缩后，将 hexo-theme-matery 的文件夹复制到你 Hexo 的 themes 文件夹中即可。</p>
+<p>当然你也可以在你的站点目录文件夹下使用<code>git clone</code>命令来下载：直接在站点根目录下执行下面的命令，即可进行主题的下载，主题有两个版本，稳定版本和最新版本 (不定期更新优化)，自主选择版本。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/blinkfox/hexo-theme-matery themes/matery     <span class="comment"># 稳定版</span></span><br><span class="line">git <span class="built_in">clone</span> -b develop https://github.com/blinkfox/hexo-theme-matery themes/matery   <span class="comment">#最新版(不定期进行优化更新)</span></span><br></pre></td></tr></table></figure>
+<h2 id="主题配置"><a class="markdownIt-Anchor" href="#主题配置"></a> 主题配置</h2>
+<p>主题下载完成后，将站点配置文件中的<code>theme</code>值修改为你下载主题的文件名，此处为<code>matery</code>，那么值就修改为<code>theme: matery</code>。</p>
+<p>一些站点配置文件的其他地方的修改：</p>
+<ul>
+  <li>
+<p>语言选择：如果为中文用户，则在<code>language</code>: 后添加值<code>zh-CN</code>，如果不修改，默认为英语；</p>
+  </li>
+  <li>
+<p>网址修改：<code>url:</code>的值为你的网址名，如<code>http://xxxx.github.io</code>，如果有域名，则修改为你的域名即可。</p>
+  </li>
+  <li>
+<p>站点配置文件有个<code>per_page</code>属性，建议修改为 6 的倍数，这样网站在适应设备时，有较好的显示效果。</p>
+  </li>
+</ul>
+<h2 id="相关配置"><a class="markdownIt-Anchor" href="#相关配置"></a> 相关配置</h2>
+<div class="note info flat"><p>请参照<a href="https://yafine-blog.cn/posts/4ab2.html">Hexo+github 搭建博客 (超级详细版，精细入微)</a>这篇博客的步骤。</p>
+</div>
 ]]></content>
       <categories>
         <category>博客搭建</category>
