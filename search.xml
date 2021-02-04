@@ -172,7 +172,7 @@ Node.js 和 Git 的安装是搭建个人博客的第一步。下面我会详细�
       </tags>
   </entry>
   <entry>
-    <title>豆瓣书单电影页面</title>
+    <title>添加豆瓣书单电影页面</title>
     <url>/2020/12/30/Blog/32894/</url>
     <content><![CDATA[<h2 id="豆瓣书单电影页面"><a class="markdownIt-Anchor" href="#豆瓣书单电影页面"></a> 豆瓣书单电影页面</h2>
 <div class="note warning flat"><p>首先需要检查 hexo 的版本，在博客的根目录下执行 hexo -v 命令就可以检查版本，这个豆瓣插件需要的版本 &lt; 4.2.0，否则会出现 bug。解决办法为降低 hexo 的版本，先卸载当前 hexo 版本，再安装低于 4.2.0 的版本即可。</p>
@@ -335,7 +335,8 @@ Node.js 和 Git 的安装是搭建个人博客的第一步。下面我会详细�
 <div class="tag link"><a class="link-card" title="添加动态诗词" href="https://lavender-z.github.io/2020/12/28/Blog/58148/"><div class="left"><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/Lavender-z/Lavender-z.github.io/img/beiyong/4.jpeg"/></div><div class="right"><p class="text">添加动态诗词</p><p class="url">https://lavender-z.github.io/2020/12/28/Blog/58148/</p></div></a></div>
 <h3 id="添加天气小插件"><a class="markdownIt-Anchor" href="#添加天气小插件"></a> 添加天气小插件</h3>
 <div class="tag link"><a class="link-card" title="添加天气小插件" href="https://lavender-z.github.io/2020/12/30/Blog/7086/"><div class="left"><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/Lavender-z/Lavender-z.github.io/img/beiyong/4.jpeg"/></div><div class="right"><p class="text">添加天气小插件</p><p class="url">https://lavender-z.github.io/2020/12/30/Blog/7086/</p></div></a></div>
-<h3 id=""><a class="markdownIt-Anchor" href="#"></a> </h3>
+<h3 id="添加豆瓣书单电影页面"><a class="markdownIt-Anchor" href="#添加豆瓣书单电影页面"></a> 添加豆瓣书单电影页面</h3>
+<div class="tag link"><a class="link-card" title="添加天气小插件" href="https://lavender-z.github.io/2020/12/30/Blog/32894/"><div class="left"><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/Lavender-z/Lavender-z.github.io/img/beiyong/4.jpeg"/></div><div class="right"><p class="text">添加天气小插件</p><p class="url">https://lavender-z.github.io/2020/12/30/Blog/32894/</p></div></a></div>
 ]]></content>
       <categories>
         <category>博客搭建</category>
